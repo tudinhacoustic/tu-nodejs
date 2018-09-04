@@ -1,0 +1,43 @@
+<style>
+	.col-md-3{
+		margin-top: 10px;
+	}
+	.col-sm-7 {
+		margin-top: 10px;
+	}
+</style>
+<div class="row" style="padding: 70px 0">
+	<div class="col-md-6">
+	<h1>Thêm sản phẩm</h1>
+		{{# if errors}}
+		<div class="alert alert-danger">
+			{{#each errors}}
+				<p>{{this.msg}}</p>
+			{{/each}}
+		</div>
+		{{/if}}
+		<hr />
+	<form action="" method="post">
+		<div class="row">
+			<label for="inputUsername" class="col-md-3 col-sm-12 col-form-label">Title(<strong style="color:red">*</strong>)</label>
+			<div class="col-md-7 col-sm-7"><input type="text" class="form-control" placeholder="Your Title" name="title" ></div>
+		
+			<label for="inputPassword" class="col-md-3 col-sm-12 col-form-label">Image Path(<strong style="color:red">*</strong>)</label>
+			<div class="col-md-7 col-sm-7"><input type="text" class="form-control" placeholder="Image Path" name="img" ></div>
+			
+			<label for="inputPassword" class="col-md-3 col-sm-12 col-form-label">Description(<strong style="color:red">*</strong>)</label>
+			<div class="col-md-7 col-sm-7"><input type="text" class="form-control" placeholder="Description" name="des" ></div>
+			
+			<label for="inputPassword" class="col-md-3 col-sm-12 col-form-label">Price(<strong style="color:red">*</strong>)</label>
+			<div class="col-md-7 col-sm-7"><input type="text" class="form-control" placeholder="Price" name="pri" >
+
+			</div>
+			<div class="col-md-12 col-sm-12"><input type="hidden" name="_csrf" value="{{csrfToken}}"><hr /></div>
+			<input type="hidden" value="{{csrfToken}}">
+			<div class="col-md-3"><input type="submit" name="" class="btn btn-primary" value="Thêm sản phẩm"></div>
+			
+		</div>
+	</form>
+	
+	</div>
+</div>

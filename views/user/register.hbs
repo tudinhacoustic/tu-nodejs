@@ -1,0 +1,36 @@
+<style>
+	.col-md-3{
+		margin-top: 10px;
+	}
+	.col-sm-7 {
+		margin-top: 10px;
+	}
+</style>
+<div class="row" style="padding: 70px 0;">
+	<div class="col-md-6 col-md-offset-6">
+	<h1>Register</h1>
+		{{#if hasErrors}}
+			<div class="alert alert-danger">
+				{{#each messages}}
+					<p>{{this}}</p>
+				{{/each}}
+			</div>
+		{{/if}}
+		<hr />
+	<form action="/user/register.html" method="post">
+		<div class="row">
+			<label for="inputUsername" class="col-md-3 col-sm-12 col-form-label">Username(<strong style="color:red">*</strong>)</label>
+			<div class="col-md-7 col-sm-7"><input type="text" class="form-control" placeholder="username" name="username"></div>
+		
+			<label for="inputPassword" class="col-md-3 col-sm-12 col-form-label">Password(<strong style="color:red">*</strong>)</label>
+			<div class="col-md-7 col-sm-7"><input type="password" class="form-control" placeholder="password" name="password"></div>
+			
+			<label for="inputPassword" class="col-md-3 col-sm-12 col-form-label">Re-Password(<strong style="color:red">*</strong>)</label>
+			<div class="col-md-7 col-sm-7"><input type="password" class="form-control" placeholder="password" name="password2"></div>
+			
+			<div class="col-md-12 col-sm-12"><input type="hidden" name="_csrf" value="{{csrfToken}}"><hr /></div>
+			<div class="col-md-3"><input type="submit" name="" class="btn btn-primary" value="Đăng Ký"></div>
+		</div>
+	</form>
+	</div>
+</div>

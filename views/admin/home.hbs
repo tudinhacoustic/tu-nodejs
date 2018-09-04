@@ -1,0 +1,52 @@
+<style>
+	.card:hover{
+		box-shadow:5px 5px 50px gray;
+	}
+</style>
+<div class="row" style="padding: 70px 0;">
+{{#if users}}
+<div class="col-12">
+Xin chào: {{users.name}}
+<h1>Welcome to Admin Page</h1>
+<hr />
+<div class="row">
+<div class="col-md-4">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Thêm Người dùng</h5>
+    <p class="card-text">Tại đây Admin có thể thêm người dùng và quản lý, thay đổi quyền truy cập người dùng.</p>
+    <a href="/admin/add/user.html" class="btn btn-primary">Bắt đầu</a>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images.pexels.com/photos/923167/pexels-photo-923167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Thêm sản phẩm</h5>
+    <p class="card-text">Tại đây Admin có thể thêm sản phẩm và đẩy nó lên trang nhất, sản phẩm mới nhất.</p>
+    <a href="/admin/add/product.html" class="btn btn-primary">Bắt đầu</a>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images.pexels.com/photos/715414/pexels-photo-715414.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Xem giỏ hàng</h5>
+    <p class="card-text">Tại đây Admin có thể xem và quản lý giỏ hàng của khách hàng, tiến hành liên lạc với khách hàng.</p>
+    <a href="#" class="btn btn-primary">Bắt đầu</a>
+  </div>
+</div>
+</div>
+</div>
+<hr />
+<h3>Mọi ý kiến thắc mắc xin reply tại: tudinhacoustic@gmail.com</h3>
+</div>
+
+
+{{/if}}
+
+
+</div>

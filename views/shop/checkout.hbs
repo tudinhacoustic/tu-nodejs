@@ -1,0 +1,56 @@
+
+<div class="row" style="padding: 70px 0;">
+	<div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+		<h1>Checkout</h1>
+		<h4>Your total: ${{total}}</h4>
+		{{# if errors}}
+		<div class="alert alert-danger">
+			{{#each errors}}
+				<p>{{this.msg}}</p>
+			{{/each}}
+		</div>
+		{{/if}}
+		<form action="/checkout.html" method="post" id="checkout-form">
+			
+	
+				  <div class="form-group">
+					<label for="exampleInputEmail1">Full Name</label>
+					<input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Your Full Name" name="fullname">
+					<small class="form-text text-muted">Nhập họ và tên của bạn</small>
+				  </div>
+				  <div class="form-group">
+					<label for="exampleInputPassword1">Email</label>
+					<input type="text" class="form-control" id="phone" placeholder="Your Email" name="email">
+					<small class="form-text text-muted">Email của bạn</small>
+				  </div>
+				  <div class="form-group">
+					<label for="exampleInputPassword1">Phone Number</label>
+					<input type="text" class="form-control" id="phone" placeholder="Your Phone Number" name="phone">
+					<small class="form-text text-muted">Số điện thoại của bạn</small>
+				  </div>
+				  <input type="text" name="totalPrice" value="{{total}}">
+				  <input type="text" name="idUser" value="{{idUser}}">
+				  {{#if products}}
+					{{#each products}}
+						<input type="hidden" name="id" value="{{this.item._id}}">
+						<input type="hidden" name="title" value="{{this.item.title}}">
+						<input type="hidden" name="price" value="{{this.item.price}}">
+					{{/each}}
+				  {{/if}}
+				  <div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="exampleCheck1">
+					<label class="form-check-label" for="exampleCheck1">Check me out</label>
+				  </div>
+		
+			<button type="submit" class="btn btn-success">Buy now</button>
+		</form>
+		<!--
+		{{#if products}}
+			{{#each products}}
+				{{this.item.title}}
+			{{/each}}
+		{{/if}}
+		-->
+	</div>
+</div>
+

@@ -1,0 +1,72 @@
+<script>
+
+</script>
+<style>
+	p{
+		line-height: 0.5em; 
+	}
+
+</style>
+
+	<div class="container" style="padding: 70px 0">
+	<h1>Giỏ hàng của bạn</h1>
+	{{# if products}}
+	<div class="row" style="">
+	
+	{{#each products}}
+		<div class="col-md-4">
+		
+		<div >
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{this.item.imagePath}}" alt="{{this.item.title}}">
+  <div class="card-body">
+    <h5 class="card-title">{{this.item.title}}</h5>
+    <p class="card-text" style="padding-bottom: 10px; line-height: 1.5em;">{{this.item.description}}</p>
+	<p>Price: $<strong>{{this.price}}</strong></p>
+	<p>Quality: <strong>{{this.qty}}</strong></p>
+
+  </div>
+</div></div>
+		
+		</div>
+	{{/each}}
+	</div><br />
+		<div class="row">
+		<div class="col-sm06 col-md-6 col-md-offset-3 col-sm-offset-3">
+			<strong>Tổng sản phẩm: <strong style="color:red;">
+				{{#if session.cart}}
+				{{session.cart.totalQty}}
+				{{else}}
+				0
+				{{/if}}
+			</strong></strong>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm06 col-md-6 col-md-offset-3 col-sm-offset-3">
+			<strong>Total: $<strong style="color:red;">{{totalPrice}}</strong></strong>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-sm06 col-md-6 col-md-offset-3 col-sm-offset-3">
+			<a href="/checkout.html"><button type="button" class="btn btn-success">Checkout</button></a>
+		</div>
+	</div>
+	</div>
+	
+	{{else}}
+	<div class="row" style="padding: 70px 0;">
+	
+		<div class="col-sm06 col-md-6 col-md-offset-3 col-sm-offset-3">
+			<h2>No items in cart</h2>
+		</div>
+	
+	</div>
+	{{/if}}
+
+
+
+
+
+

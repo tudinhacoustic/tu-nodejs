@@ -1,0 +1,32 @@
+<div class="row" style="padding: 70px 0;">
+<!-- Modify this according to your requirement -->
+<h3>
+  Chúc mừng bạn đã đăng xuất thành công
+  <br />Bạn sẽ chuyển về trang chủ sau <span id="countdown" style="color: red;">10</span> giây
+  <br /><a href="/"><button class="btn btn-primary">Chuyển trang</button></a>
+</h3>
+<!-- JavaScript part -->
+<script type="text/javascript">
+    
+    // Total seconds to wait
+    var seconds = 10;
+    
+    function countdown() {
+        seconds = seconds - 1;
+        if (seconds < 0) {
+            // Chnage your redirection link here
+            window.location = "/";
+        } else {
+            // Update remaining seconds
+            document.getElementById("countdown").innerHTML = seconds;
+            // Count down using javascript
+            window.setTimeout("countdown()", 1000);
+        }
+    }
+    
+    // Run countdown function
+    countdown();
+    
+
+</script>
+</div>
